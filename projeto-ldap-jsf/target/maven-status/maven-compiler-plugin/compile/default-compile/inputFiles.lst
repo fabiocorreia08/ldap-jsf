@@ -1,3 +1,6 @@
-C:\Fabio\workspace\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\Application.java
-C:\Fabio\workspace\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\model\Person.java
-C:\Fabio\workspace\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\repo\PersonRepository.java
+C:\Users\Fabio\git\ldap-jsf\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\controller\PersonController.java
+C:\Users\Fabio\git\ldap-jsf\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\config\LdapConfig.java
+C:\Users\Fabio\git\ldap-jsf\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\Application.java
+C:\Users\Fabio\git\ldap-jsf\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\repo\PersonRepository.java
+C:\Users\Fabio\git\ldap-jsf\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\controller\EmpregadoErpController.java
+C:\Users\Fabio\git\ldap-jsf\projeto-ldap-jsf\src\main\java\br\gov\cmb\jsf\model\Person.java

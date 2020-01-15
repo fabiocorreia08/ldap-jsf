@@ -3,7 +3,9 @@ package br.gov.cmb.jsf.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +20,8 @@ public class PersonController {
 
 	@Autowired
 	PersonRepository personRepository;
+	@Autowired
+	LdapTemplate ldapTemplate;
 
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public ModelAndView list() {
@@ -30,10 +34,19 @@ public class PersonController {
 	@RequestMapping(value="/update/{uid}", method=RequestMethod.GET)
 	public ModelAndView edit(@PathVariable String uid) {
 		ModelAndView model = new ModelAndView("person_list");
-		Person person = personRepository.findByUid(uid);
+		Person person = personRepository.findOne(uid);
 		model.addObject("personForm", person);
 		model.setViewName("person_form");
 		return model;		
 	}	
+
+	@RequestMapping(value="/save", method=RequestMethod.POST) 
+	public ModelAndView	save(@ModelAttribute("personForm") Person person) {
+		personRepository.update(person); 
+		return new ModelAndView("redirect:/person/list"); 
+	}
+	
+	
+
 
 }

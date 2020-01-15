@@ -28,16 +28,26 @@
 		<br></br>
 		<table class="table table-striped">
 			<thead>
-				<th scope="raw">FullName</th>				
-				<th scope="raw">UpDate</th>
+				
+				<th scope="raw">uid</th>	
+				<th scope="raw">fullName</th>	
+				<th scope="raw">lastName</th>
+				<th scope="raw">description</th>
+				<th scope="raw">physicalDeliveryOfficeName</th>
+				<th scope="raw">UpDate</th>				
 				
 			</thead>
 			<tbody>
 				<c:forEach items="${personList}" var="person">
 					<tr>
+						
+						<td>${person.uid }</td>
+						<td>${person.fullName }</td>
+						<td>${person.lastName }</td>
 						<td>${person.description }</td>
+						<td>${person.physicalDeliveryOfficeName }</td>
 						<td>
-							<s:url value="/person/update/${person.cn }" var="updateURL"/>
+							<s:url value="/person/update/${person.uid }" var="updateURL"/>
 							<a class="btn btn-primary" href="${updateURL }" role="button">Update</a>
 						</td>
 					</tr>				

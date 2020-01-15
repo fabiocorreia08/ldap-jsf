@@ -24,22 +24,19 @@
         <s:url value="/person/save" var="saveURL"/>
 		<h2>Person</h2>
 		<form:form modelAttribute="personForm" method="post" action="${saveURL }" cssClass="form">		
-			<div class="form-group">
-				<label>dn</label>
-				<form:input path="dn" type="text" class="form-control" id="dn" placeholder="DN" disabled="true"/>
-			</div>		
+				
 			<div class="form-group">
 				<label>uid</label>
-				<form:input path="uid" type="text" class="form-control" id="uid" placeholder="Uid" disabled="true"/>
+				<form:input path="uid" type="text" class="form-control" id="uid" placeholder="Uid" />
 			</div>
 				
 			<div class="form-group">
 				<label>fullName</label>
-				<form:input path="fullName" type="text" class="form-control" id="fullName" placeholder="FullName" disabled="true"/>
+				<form:input path="fullName" type="text" class="form-control" id="fullName" placeholder="FullName" />
 			</div>
 			<div class="form-group">
 				<label>lastName</label>
-				<form:input path="lastName" type="text" class="form-control" id="lastName" placeholder="LastName" disabled="true"/>
+				<form:input path="lastName" type="text" class="form-control" id="lastName" placeholder="LastName" />
 			</div>
 			<div class="form-group">
 				<label>description</label>
@@ -47,7 +44,7 @@
 			</div>	
 			<div class="form-group">
 				<label>physicalDeliveryOfficeName</label>
-				<form:input path="physicalDeliveryOfficeName" type="text" class="form-control" id="physicalDeliveryOfficeName" placeholder="physicalDeliveryOfficeName" disabled="true" />
+				<form:input path="physicalDeliveryOfficeName" type="text" class="form-control" id="physicalDeliveryOfficeName" placeholder="physicalDeliveryOfficeName"  />
 			</div>					
 			
 			<button type="submit" class="btn btn-primary">Save</button>

@@ -28,7 +28,7 @@
 		<br></br>
 		<table class="table table-striped">
 			<thead>
-				<th scope="raw">dn</th>
+				
 				<th scope="raw">uid</th>	
 				<th scope="raw">fullName</th>	
 				<th scope="raw">lastName</th>
@@ -40,7 +40,7 @@
 			<tbody>
 				<c:forEach items="${personList}" var="person">
 					<tr>
-						<td>${person.dn }</td>
+						
 						<td>${person.uid }</td>
 						<td>${person.fullName }</td>
 						<td>${person.lastName }</td>
