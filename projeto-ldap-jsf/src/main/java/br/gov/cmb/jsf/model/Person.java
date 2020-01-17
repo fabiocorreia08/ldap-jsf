@@ -5,19 +5,22 @@ public final  class Person {
 	private String uid;
     private String fullName;
     private String lastName;
+    private String physicalDeliveryOfficeName;
 
     public Person() {
     }
 
-    public Person(String fullName, String lastName) {
+    public Person(String fullName, String lastName, String physicalDeliveryOfficeName) {
         this.fullName = fullName;
         this.lastName = lastName;
+        this.physicalDeliveryOfficeName = physicalDeliveryOfficeName;
     }
 
-    public Person(String uid, String fullName, String lastName) {
+    public Person(String uid, String fullName, String lastName, String physicalDeliveryOfficeName) {
         this.uid = uid;
         this.fullName = fullName;
         this.lastName = lastName;
+        this.physicalDeliveryOfficeName = physicalDeliveryOfficeName;
     }
 
     public String getUid() {
@@ -42,13 +45,22 @@ public final  class Person {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
+    }    
 
-    @Override
+    public String getPhysicalDeliveryOfficeName() {
+		return physicalDeliveryOfficeName;
+	}
+
+	public void setPhysicalDeliveryOfficeName(String physicalDeliveryOfficeName) {
+		this.physicalDeliveryOfficeName = physicalDeliveryOfficeName;
+	}
+
+	@Override
     public String toString() {
         return "Person{" +
                 "fullName='" + fullName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                 ", physicalDeliveryOfficeName='" + physicalDeliveryOfficeName + '\'' +
                 '}';
     }
 }

@@ -47,10 +47,10 @@ public class PersonRepository implements BaseLdapNameAware  {
         return ldapTemplate.lookup(dn, new PersonContextMapper());
     }
 
-    public List<Person> findByName(String name) {
+    public List<Person> findByName(String physicalDeliveryOfficeName) {
         LdapQuery q = LdapQueryBuilder.query()
                 .where("objectclass").is("person")
-                .and("cn").whitespaceWildcardsLike(name);
+                .and("physicalDeliveryOfficeName").whitespaceWildcardsLike(physicalDeliveryOfficeName);
         return ldapTemplate.search(q, new PersonContextMapper());
     }
 
@@ -86,6 +86,7 @@ public class PersonRepository implements BaseLdapNameAware  {
         attrs.put("uid", p.getUid());
         attrs.put("cn", p.getFullName());
         attrs.put("sn", p.getLastName());
+        attrs.put("physicalDeliveryOfficeName", p.getPhysicalDeliveryOfficeName());
         return attrs;
     }
 
@@ -96,6 +97,7 @@ public class PersonRepository implements BaseLdapNameAware  {
             person.setFullName(context.getStringAttribute("cn"));
             person.setLastName(context.getStringAttribute("sn"));
             person.setUid(context.getStringAttribute("uid"));
+            person.setPhysicalDeliveryOfficeName(context.getStringAttribute("physicalDeliveryOfficeName"));
             return person;
         }
     }

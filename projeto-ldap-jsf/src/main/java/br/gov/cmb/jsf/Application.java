@@ -35,6 +35,17 @@ public class Application {
 
 	        List<Person> persons = personRepository.findAll();
 	        log.info("persons: " + persons);
+	        
+	        List<Person> persons2 = personRepository.findByName("079855");
+	        log.info("persons2: " + persons2);
+	        
+	        for (Person person : persons2) {
+				if(person.getPhysicalDeliveryOfficeName().equals("079855")) {
+					System.out.println("e iguallll");
+				}else {
+					System.out.println("não é igual");
+				}
+			}
 
 	        Person john = personRepository.findOne("john");
 	        john.setLastName("custom last name");
